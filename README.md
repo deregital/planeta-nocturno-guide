@@ -1,46 +1,64 @@
-# Astro Starter Kit: Basics
+# Planeta Nocturno - Guía
 
-```sh
-npm create astro@latest -- --template basics
+Guía de uso del sistema **Planeta Nocturno**, construida con [Astro](https://astro.build).
+
+## Estructura
+
+```
+src/
+├── data/
+│   └── guide.ts          # Datos y tipos: roles, sectores, ítems
+├── components/
+│   ├── GuideTopbar.astro  # Barra superior con roles y sectores
+│   └── GuideAccordionItem.astro  # Acordeón desplegable (título + texto + video)
+├── layouts/
+│   └── Layout.astro       # Layout global
+├── pages/
+│   ├── index.astro        # Landing con selector de rol
+│   └── guia/
+│       └── [rol].astro    # Página dinámica por rol
+└── styles/
+    └── guide.css          # Estilos globales
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Cómo editar el contenido
 
-## 🚀 Project Structure
+Todo el contenido se gestiona desde `src/data/guide.ts`. La estructura es:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```ts
+roles[] → sectors[] → items[]
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Cada **ítem** tiene:
 
-## 🧞 Commands
+| Campo   | Tipo     | Descripción                          |
+|---------|----------|--------------------------------------|
+| `title` | string   | Título del acordeón                  |
+| `body`  | string   | Texto explicativo                    |
+| `video` | opcional | `{ kind: "embed" \| "file", url }` |
 
-All commands are run from the root of the project, from a terminal:
+### Agregar un video embebido (YouTube/Vimeo)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Usá la URL de embed, no la URL normal:
 
-## 👀 Want to learn more?
+```ts
+video: { kind: "embed", url: "https://www.youtube.com/embed/VIDEO_ID" }
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Agregar un video local
+
+1. Colocá el archivo en `public/videos/` (ej: `public/videos/tutorial.mp4`)
+2. Referencialo así:
+
+```ts
+video: { kind: "file", url: "/videos/tutorial.mp4" }
+```
+
+## Comandos
+
+| Comando             | Acción                                  |
+|---------------------|-----------------------------------------|
+| `npm install`       | Instala dependencias                    |
+| `npm run dev`       | Servidor de desarrollo en localhost:4321 |
+| `npm run build`     | Build de producción en `./dist/`        |
+| `npm run preview`   | Preview del build localmente            |

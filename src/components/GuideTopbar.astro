@@ -1,0 +1,178 @@
+---
+import { roles } from "../data/guide";
+
+interface Props {
+  activeSlug: string;
+}
+
+const { activeSlug } = Astro.props;
+---
+
+<div class="topbar-wrap">
+  <div class="topbar-bar">
+    <a href="/" class="brand">
+      <span class="brand-planeta">Planeta</span><span class="brand-nocturno">Nocturno</span>
+    </a>
+
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+    </button>
+
+    <nav class="nav-desktop">
+      {roles.map((role) => (
+        <a
+          href={`/guia/${role.slug}`}
+          class:list={["nav-link", { active: role.slug === activeSlug }]}
+        >
+          {role.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  <nav class="nav-mobile" id="topbar-nav">
+    {roles.map((role) => (
+      <a
+        href={`/guia/${role.slug}`}
+        class:list={["nav-link", { active: role.slug === activeSlug }]}
+      >
+        {role.label}
+      </a>
+    ))}
+  </nav>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const btn = document.querySelector(".menu-btn");
+    const nav = document.getElementById("topbar-nav");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(open));
+      });
+    }
+  });
+</script>
+
+<style>
+  .topbar-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .topbar-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 58px;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    display: flex;
+  }
+
+  .brand-planeta {
+    color: var(--color-text-heading);
+  }
+
+  .brand-nocturno {
+    color: var(--color-primary);
+  }
+
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Desktop nav: hidden on mobile, inline on desktop */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* Mobile nav: animated dropdown */
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 2px;
+    border-top: 1px solid var(--color-border-light);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  }
+
+  .nav-mobile.open {
+    max-height: 300px;
+    opacity: 1;
+    padding: 0.25rem 1rem 0.75rem;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .nav-link:hover {
+    background: var(--color-primary-soft);
+    color: var(--color-text-heading);
+  }
+
+  .nav-link.active {
+    background: var(--color-primary);
+    color: #000;
+    font-weight: 600;
+  }
+
+  @media (min-width: 640px) {
+    .topbar-bar {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .nav-mobile {
+      display: none;
+    }
+
+    .nav-desktop {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .nav-link {
+      padding: 0.45rem 0.75rem;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+import type { VideoSource } from "../data/guide";
+
+interface Props {
+  title: string;
+  video: VideoSource;
+}
+
+const { title, video } = Astro.props;
+---
+
+<div class="card">
+  <h2 class="card-title">{title}</h2>
+  <div class="video-frame">
+    {video.kind === "embed" ? (
+      <iframe
+        src={video.url}
+        title={title}
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      />
+    ) : (
+      <video controls preload="metadata">
+        <source src={video.url} />
+      </video>
+    )}
+  </div>
+</div>
+
+<style>
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary-muted);
+  }
+
+  .card-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    color: var(--color-text-heading);
+    line-height: 1.35;
+  }
+</style>
