@@ -11,38 +11,52 @@ const { activeSlug } = Astro.props;
 <div class="topbar-wrap">
   <div class="topbar-bar">
     <a href="/" class="brand">
-      <span class="brand-planeta">Planeta</span><span class="brand-nocturno">Nocturno</span>
+      <span class="brand-planeta">Planeta</span><span class="brand-nocturno"
+        >Nocturno</span
+      >
     </a>
 
     <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-        <line x1="4" y1="7" x2="20" y2="7" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="17" x2="20" y2="17" />
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      >
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
       </svg>
     </button>
 
     <nav class="nav-desktop">
-      {roles.map((role) => (
+      {
+        roles.map((role) => (
+          <a
+            href={`/guia/${role.slug}`}
+            class:list={["nav-link", { active: role.slug === activeSlug }]}
+          >
+            {role.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <nav class="nav-mobile" id="topbar-nav">
+    {
+      roles.map((role) => (
         <a
           href={`/guia/${role.slug}`}
           class:list={["nav-link", { active: role.slug === activeSlug }]}
         >
           {role.label}
         </a>
-      ))}
-    </nav>
-  </div>
-
-  <nav class="nav-mobile" id="topbar-nav">
-    {roles.map((role) => (
-      <a
-        href={`/guia/${role.slug}`}
-        class:list={["nav-link", { active: role.slug === activeSlug }]}
-      >
-        {role.label}
-      </a>
-    ))}
+      ))
+    }
   </nav>
 </div>
 
@@ -119,7 +133,10 @@ const { activeSlug } = Astro.props;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+    transition:
+      max-height 0.3s ease,
+      opacity 0.2s ease,
+      padding 0.3s ease;
   }
 
   .nav-mobile.open {
@@ -135,7 +152,9 @@ const { activeSlug } = Astro.props;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-text-muted);
-    transition: background 0.15s, color 0.15s;
+    transition:
+      background 0.15s,
+      color 0.15s;
   }
 
   .nav-link:hover {
@@ -151,7 +170,7 @@ const { activeSlug } = Astro.props;
 
   @media (min-width: 640px) {
     .topbar-bar {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }

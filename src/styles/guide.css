@@ -59,6 +59,13 @@ h1, h2, h3 {
   padding: 1.5rem 1rem 4rem;
 }
 
+@media (min-width: 640px) {
+  .guide-main {
+    max-width: 900px;
+    padding: 2rem 1.5rem 4rem;
+  }
+}
+
 .video-frame {
   position: relative;
   width: 100%;
@@ -85,9 +92,15 @@ h1, h2, h3 {
 }
 
 .video-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .video-list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .empty {
