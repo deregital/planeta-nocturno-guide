@@ -21,27 +21,27 @@ export const roles: Role[] = [
     label: "Administrador",
     slug: "administrador",
     items: [
-      {
-        title: "Crear un nuevo usuario",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-      },
-      {
-        title: "Editar permisos de un usuario",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-      },
-      {
-        title: "Modificar parámetros generales",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-      },
+      // {
+      //   title: "Crear un nuevo usuario",
+      //   video: {
+      //     kind: "embed",
+      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      //   },
+      // },
+      // {
+      //   title: "Editar permisos de un usuario",
+      //   video: {
+      //     kind: "embed",
+      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      //   },
+      // },
+      // {
+      //   title: "Modificar parámetros generales",
+      //   video: {
+      //     kind: "embed",
+      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      //   },
+      // },
     ],
   },
   {
@@ -49,20 +49,20 @@ export const roles: Role[] = [
     label: "Jefe de Organizadores",
     slug: "jefe-organizadores",
     items: [
-      {
-        title: "Ver resumen de evento",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-      },
-      {
-        title: "Asignar organizadores a un evento",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-      },
+      // {
+      //   title: "Ver resumen de evento",
+      //   video: {
+      //     kind: "embed",
+      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      //   },
+      // },
+      // {
+      //   title: "Asignar organizadores a un evento",
+      //   video: {
+      //     kind: "embed",
+      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      //   },
+      // },
     ],
   },
   {
@@ -119,20 +119,20 @@ export const roles: Role[] = [
     label: "Acceso",
     slug: "acceso",
     items: [
-      {
-        title: "Escanear una entrada",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-      },
-      {
-        title: "Buscar un asistente manualmente",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-      },
+      // {
+      //   title: "Escanear una entrada",
+      //   video: {
+      //     kind: "embed",
+      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      //   },
+      // },
+      // {
+      //   title: "Buscar un asistente manualmente",
+      //   video: {
+      //     kind: "embed",
+      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      //   },
+      // },
     ],
   },
 ];

@@ -22,26 +22,22 @@ if (!role) {
   <main class="guide-main">
     <h1 class="page-title">{role.label}</h1>
 
-    <div class="video-list">
-      {
-        role.items.map((item) => (
+    {role.items.length === 0 ? (
+      <div class="empty">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        <p>Todavía no hay tutoriales disponibles para este rol.</p>
+      </div>
+    ) : (
+      <div class="video-list">
+        {role.items.map((item) => (
           <GuideVideoCard title={item.title} video={item.video} />
-        ))
-      }
-    </div>
+        ))}
+      </div>
+    )}
   </main>
 </Layout>
 
-<style>
-  .page-title {
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-  }
-
-  .video-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-</style>
