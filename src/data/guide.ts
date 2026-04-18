@@ -71,38 +71,10 @@ export const roles: Role[] = [
     slug: "organizadores",
     items: [
       {
-        title: "Inicio de sesión",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/USqp59OW0CM",
-        },
-      },
-      {
-        title: "Visualizar evento",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/-F3FTuWsXAQ",
-        },
-      },
-      {
-        title: "Compartir link a contacto",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/5wdX4oGA130",
-        },
-      },
-      {
         title: "Subir a estados",
         video: {
           kind: "embed",
           url: "https://www.youtube.com/embed/1AuTGhVgJtE",
-        },
-      },
-      {
-        title: "Reenviar PDF",
-        video: {
-          kind: "embed",
-          url: "https://www.youtube.com/embed/S7wFuBQQwus",
         },
       },
       {
