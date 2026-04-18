@@ -112,6 +112,83 @@ export const roles: Role[] = [
           url: "https://www.youtube.com/embed/CB-sVBfkR4k",
         },
       },
+      {
+        title: "Reenviar y descargar",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/gb5Mgv709iw",
+        },
+      },
+      {
+        title: "Crear acceso directo",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/RNq2aNETrxY",
+        },
+      },
+      {
+        title: "Crear acceso directo (instalar)",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/QNCm0i3Xz1I",
+        },
+      },
+      {
+        title: "Recorrido por la plataforma",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/1cUSdNW0vY4",
+        },
+      },
+      {
+        title: "Recorrido por cada menú",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/rpaFMeJ1XpA",
+        },
+      },
+      {
+        title: "Recorrido por evento particular",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/5UwumhwXEK8",
+        },
+      },
+      {
+        title: "Copiar link de tickets",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/ai59s3VA0JM",
+        },
+      },
+      {
+        title: "Visualizar la compra de entradas",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/q7usjkELq6Q",
+        },
+      },
+      {
+        title: "Tipos de tickets y buscador en evento particular",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/3s5pqCddaYs",
+        },
+      },
+      {
+        title: "Copiar link por tipo de ticket",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/PdPxmlOisyU",
+        },
+      },
+      {
+        title: "Asistir a tus compradores: Reenviar y descargar",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/gb5Mgv709iw",
+        },
+      },
     ],
   },
   {
