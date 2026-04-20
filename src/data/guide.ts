@@ -161,6 +161,27 @@ export const roles: Role[] = [
           url: "https://www.youtube.com/embed/gb5Mgv709iw",
         },
       },
+      {
+        title: "Ver cómo entran tus compradores",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/Mou3bLXUVsQ",
+        },
+      },
+      {
+        title: "Historial de eventos y chequeo de asistencia",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/wQfGHGQeMC8",
+        },
+      },
+      {
+        title: "Menú particular de un “usuario” en Base de Datos",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/0bLfZ6PX2vk",
+        },
+      },
     ],
   },
   {
