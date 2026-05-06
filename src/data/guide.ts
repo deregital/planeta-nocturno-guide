@@ -49,20 +49,69 @@ export const roles: Role[] = [
     label: "Jefe de Organizadores",
     slug: "jefe-organizadores",
     items: [
-      // {
-      //   title: "Ver resumen de evento",
-      //   video: {
-      //     kind: "embed",
-      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      //   },
-      // },
-      // {
-      //   title: "Asignar organizadores a un evento",
-      //   video: {
-      //     kind: "embed",
-      //     url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      //   },
-      // },
+      {
+        title: "Lista de Ventas",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/YppNt-HS0vI",
+        },
+      },
+      {
+        title: "Entradas de Organizadores",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/_1tLsFZo4DM",
+        },
+      },
+      {
+        title: "Buscador y Filtrado",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/pdctZOdsGNk",
+        },
+      },
+      {
+        title: "Importar usuarios",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/nCofd8VcnUg",
+        },
+      },
+      {
+        title: "Exportar a Excel",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/aZgnGNyuzYo",
+        },
+      },
+      {
+        title: "Editar organizadores",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/jmdmATF_1HU",
+        },
+      },
+      {
+        title: "Editar contraseña",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/mJ8KfGcCmdU",
+        },
+      },
+      {
+        title: "Eliminar organizadores",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/65XBlAhlRi4",
+        },
+      },
+      {
+        title: "Menú particular de Organizadores",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/sA15zTEeO_8",
+        },
+      },
     ],
   },
   {
