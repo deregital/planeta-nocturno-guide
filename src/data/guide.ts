@@ -119,6 +119,13 @@ export const roles: Role[] = [
           url: "https://www.youtube.com/embed/sA15zTEeO_8",
         },
       },
+      {
+        title: "Enlaces",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/aoxj7lQztQU",
+        },
+      },
     ],
   },
   {
