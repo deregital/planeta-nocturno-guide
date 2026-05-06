@@ -78,6 +78,13 @@ export const roles: Role[] = [
         },
       },
       {
+        title: "Crear nuevo organizador",
+        video: {
+          kind: "embed",
+          url: "https://www.youtube.com/embed/JW9Lax5QwFs",
+        },
+      },
+      {
         title: "Exportar a Excel",
         video: {
           kind: "embed",
